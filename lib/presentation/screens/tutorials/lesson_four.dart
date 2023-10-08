@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/bloc/name_state/name_state_bloc.dart';
+import '../../../logic/bloc/name_state/name_state_bloc.dart';
 
 class MyLessonFour extends StatelessWidget {
   const MyLessonFour({super.key});
