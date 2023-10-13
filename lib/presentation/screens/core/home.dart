@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_hossam_hamed/presentation/screens/tutorials/lesson_localization.dart';
-import '../../../logic/bloc/app_connectivity/app_connectivity_bloc.dart';
-import '../../../logic/bloc/name_state/name_state_bloc.dart';
 
-import '../tutorials/lesson_four.dart';
-import '../tutorials/lesson_five.dart';
-import '../tutorials/lesson_six.dart';
+import '../../../data/localization/app_localizations.dart';
+import '../settings/settings.dart';
 
 class MyHomeScreen extends StatelessWidget {
   const MyHomeScreen({super.key});
@@ -15,7 +10,7 @@ class MyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Flutter BloC Tutorial')),
+        title: const Center(child: Text('Jobangi')),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -27,51 +22,13 @@ class MyHomeScreen extends StatelessWidget {
             children: [
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
+                    Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => BlocProvider(
-                          // Import State Bloc => NameStateBloc
-                          create: (context) => NameStateBloc(),
-                          child: const MyLessonFour(),
-                        ),
+                        builder: (context) => const MySettingsScreen(),
                       ),
                     );
                   },
-                  child: const Text('Lesson-04 (Change Name BloC)')),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BlocProvider(
-                          // Import State Bloc => NameStateBloc
-                          create: (context) => AppConnectivityBloc(),
-                          child: const MyLessonFiveScreen(),
-                        ),
-                      ),
-                    );
-                  },
-                  child:
-                      const Text('Lesson-05 (Check Internet Connection BloC)')),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MyLessonSixScreen()),
-                    );
-                  },
-                  child: const Text('Lesson-06 (App Theme BloC)')),
-                                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MyLessonLocalizationScreen()),
-                    );
-                  },
-                  child: const Text('Lesson-Translation (Localization Flutter)')),
+                  child:  Text(AppLocalizations.of(context)!.translate('Go_To_Setting'))),
             ],
           ),
         ),

@@ -1,3 +1,19 @@
 {
-    "home_page": "Home Page"
+    "home_page": "Home Page",
+
+    "Go_To_Setting": "Settings",
+
+    "Localization": "Change App Language",
+    "Arabic": "اللغة العربية",
+    "English":"English",
+    
+    "App_Language": "Change Language",
+    "App_Settings": "Settings",
+    "App_Theme": "Change Theme",
+
+    "Theme":"Change App Theme",
+    "Light_Theme":"Light Theme",
+    "Dark_Theme":"Dark Theme"
+
+
 }

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/localization/app_localizations.dart';
-import '../../../logic/bloc/app_localization/localization_bloc.dart';
+import '../../../logic/utility/app_localization/localization_bloc.dart';
 
-class MyLessonLocalizationScreen extends StatelessWidget {
-  const MyLessonLocalizationScreen({super.key});
+class MySettingsLocalizationScreen extends StatelessWidget {
+  const MySettingsLocalizationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Localization By Pure Flutter'),
-      ),
+          title: Text(
+        AppLocalizations.of(context)!.translate('Localization'),
+      )),
       body: Padding(
         padding: const EdgeInsets.only(top: 50),
         child: SingleChildScrollView(
@@ -25,16 +26,18 @@ class MyLessonLocalizationScreen extends StatelessWidget {
                     BlocProvider.of<AppLocalizationBloc>(context)
                         .add(AppLocalizationArabicEvent());
                   },
-                  child: const Text('Arabic'),
+                  child: Text(
+                    AppLocalizations.of(context)!.translate('Arabic'),
+                  ),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    BlocProvider.of<AppLocalizationBloc>(context)
-                        .add(AppLocalizationEnglishEvent());
-                  },
-                  child: const Text('English'),
-                ),
-                Text(AppLocalizations.of(context)!.translate('home_page'))
+                    onPressed: () {
+                      BlocProvider.of<AppLocalizationBloc>(context)
+                          .add(AppLocalizationEnglishEvent());
+                    },
+                    child: Text(
+                      AppLocalizations.of(context)!.translate('English'),
+                    )),
               ],
             ),
           ),

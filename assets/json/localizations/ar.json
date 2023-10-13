@@ -1,3 +1,18 @@
 {
-    "home_page": "الصفحة الرئيسية"
+    "home_page": "الصفحة الرئيسية",
+
+    "Go_To_Setting": "الإعدادات",
+
+    "Localization": "تغيير لغة البرنامج",
+    "Arabic": "اللغة العربية",
+    "English":"English",
+
+
+    "App_Language": "إعدادات اللغة",
+    "App_Settings": "الإعدادات",
+    "App_Theme": "إعدادات الوضع الليلي",
+
+    "Theme":"تفعيل وضع الإضاءة الليلية",
+    "Light_Theme":"الوضع الفاتح ",
+    "Dark_Theme":"الوضع الداكن"
 }
