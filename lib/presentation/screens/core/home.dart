@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_hossam_hamed/presentation/screens/tutorials/lesson_localization.dart';
-
-import '../../../logic/bloc/check_internet_connect/check_internet_connectivity_bloc.dart';
+import '../../../logic/bloc/app_connectivity/app_connectivity_bloc.dart';
 import '../../../logic/bloc/name_state/name_state_bloc.dart';
-// import '../../../logic/bloc/app_theme/app_theme_bloc.dart';
 
 import '../tutorials/lesson_four.dart';
 import '../tutorials/lesson_five.dart';
@@ -48,7 +46,7 @@ class MyHomeScreen extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => BlocProvider(
                           // Import State Bloc => NameStateBloc
-                          create: (context) => CheckInternetConnectivityBloc(),
+                          create: (context) => AppConnectivityBloc(),
                           child: const MyLessonFiveScreen(),
                         ),
                       ),

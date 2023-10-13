@@ -1,23 +1,23 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'localization_bloc.dart';
 
-sealed class LocalizationState extends Equatable {
-  const LocalizationState();
+sealed class AppLocalizationState extends Equatable {
+  const AppLocalizationState();
 
   @override
   List<Object> get props => [];
 }
 
-class LocalizationInitialState extends LocalizationState {
+class AppLocalizationInitialState extends AppLocalizationState {
 /*   final String? language;
   const LocalizationInitialState({
     this.language,
   }); */
 }
 
-class LocalizationChangeState extends LocalizationState {
+class AppLocalizationChangeState extends AppLocalizationState {
   final String? languageCode;
-  const LocalizationChangeState({
+  const AppLocalizationChangeState({
     this.languageCode,
   });
 }

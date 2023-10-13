@@ -11,17 +11,17 @@ class AppThemeBloc extends Bloc<AppThemeEvent, AppThemeState> {
       if (event is AppThemeInitialEvent) {
         if (sharedPrefer!.getString('theme') != null) {
           if (sharedPrefer!.getString('theme') == 'light') {
-            emit(const AppThemeLightState(appThemeType: 'light'));
+            emit(const AppThemeChangeState(appThemeType: 'light'));
           } else if (sharedPrefer!.getString('theme') == 'dark') {
-            emit(const AppThemeDarkState(appThemeType: 'dark'));
+            emit(const AppThemeChangeState(appThemeType: 'dark'));
           }
         }
       } else if (event is AppThemeLightEvent) {
         sharedPrefer!.setString('theme', 'light');
-        emit(const AppThemeLightState(appThemeType: 'light'));
+        emit(const AppThemeChangeState(appThemeType: 'light'));
       } else if (event is AppThemeDarkEvent) {
         sharedPrefer!.setString('theme', 'dark');
-        emit(const AppThemeDarkState(appThemeType: 'dark'));
+        emit(const AppThemeChangeState(appThemeType: 'dark'));
       }
     });
   }

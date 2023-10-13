@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../logic/bloc/check_internet_connect/check_internet_connectivity_bloc.dart';
+import '../../../logic/bloc/app_connectivity/app_connectivity_bloc.dart';
 
 class MyLessonFiveScreen extends StatelessWidget {
   const MyLessonFiveScreen({super.key});
@@ -28,13 +28,13 @@ class MyLessonFiveScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 // Add BlocBuilder to the Widget which will be rebuilt.
                 // Apply Targeted Bloc and State (NameStateBloc & NameStateState).
-                child: BlocBuilder<CheckInternetConnectivityBloc, CheckInternetConnectivityState>(
+                child: BlocBuilder<AppConnectivityBloc, AppConnectivityState>(
                   builder: (context, state) {
                     // Create If State is Loading and Loaded Conditions.
-                    if (state is InternetConnectivityTrueState) {
-                      return Center(child: Text(state.internetConnectivity));
-                    } else if (state is InternetConnectivityFalseState) {
-                      return Center(child: Text(state.internetConnectivity));
+                    if (state is AppConnectivityTrueState) {
+                      return Center(child: Text(state.connectivityMessage));
+                    } else if (state is AppConnectivityFalseState) {
+                      return Center(child: Text(state.connectivityMessage));
                     }
                     // The Widget must contain return.
                     return const Center(child: Text('Every Thing Is OK'));

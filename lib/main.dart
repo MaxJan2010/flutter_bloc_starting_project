@@ -6,6 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'data/localization/app_localizations.dart';
+import 'logic/bloc/app_connectivity/app_connectivity_bloc.dart';
+import 'logic/bloc/app_localization/localization_bloc.dart';
 import 'presentation/screens/core/home.dart';
 
 void main() async {
@@ -19,7 +21,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AppConnectivityBloc(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              AppLocalizationBloc()..add(AppLocalizationInitialEvent()),
+        ),
+        BlocProvider(
+          create: (context) => AppThemeBloc()..add(AppThemeInitialEvent()),
+        ),
+      ],
+      child: BlocBuilder<AppThemeBloc, AppThemeState>(
+        builder: (context, themeState) {
+          var speek = themeState is AppThemeChangeState
+              ? themeState.appThemeType
+              : 'light';
+          return BlocBuilder<AppLocalizationBloc, AppLocalizationState>(
+            builder: (context, langState) {
+              var speek = langState is AppLocalizationChangeState
+                  ? langState.languageCode
+                  : 'en';
+              return MaterialApp();
+            },
+          );
+        },
+      ),
+    );
+
+    /* 
+    BlocProvider(
       create: (context) => AppThemeBloc()..add(AppThemeInitialEvent()),
       child: BlocBuilder<AppThemeBloc, AppThemeState>(
         builder: (context, state) {
@@ -102,6 +135,6 @@ class MyApp extends StatelessWidget {
           );
         },
       ),
-    );
+    ); */
   }
 }
