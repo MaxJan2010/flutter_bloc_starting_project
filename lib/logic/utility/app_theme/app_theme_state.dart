@@ -18,9 +18,3 @@ class AppThemeChangeState extends AppThemeState {
 
   const AppThemeChangeState({this.appThemeType});
 }
-
-/* class AppThemeDarkState extends AppThemeState {
-  final String? appThemeType;
-
-  const AppThemeDarkState({this.appThemeType});
-} */
