@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'data/config/local_storage.dart';
 import 'data/localization/app_localizations.dart';
+import 'data/observers/app_bloc_observer.dart';
 import 'logic/utility/app_connectivity/app_connectivity_bloc.dart';
 import 'logic/utility/app_localization/localization_bloc.dart';
 import 'logic/utility/app_theme/app_theme_bloc.dart';
@@ -12,6 +13,7 @@ import 'presentation/screens/core/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+    Bloc.observer = MyAppBlocObserver();
   sharedPrefer = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
