@@ -10,7 +10,7 @@ class MyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Jobangi')),
+        title: const Center(child: Text('My APP')),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
