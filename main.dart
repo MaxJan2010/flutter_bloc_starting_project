@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'data/config/local_storage.dart';
-import 'data/localization/app_localizations.dart';
-import 'data/observers/app_bloc_observer.dart';
-import 'logic/utility/app_connectivity/app_connectivity_bloc.dart';
-import 'logic/utility/app_localization/localization_bloc.dart';
-import 'logic/utility/app_theme/app_theme_bloc.dart';
-import 'presentation/screens/core/home.dart';
+import './lib/data/config/local_storage.dart';
+import './lib/data/localization/app_localizations.dart';
+import './lib/data/observers/app_bloc_observer.dart';
+import './lib/logic/utility/app_connectivity/app_connectivity_bloc.dart';
+import './lib/logic/utility/app_localization/localization_bloc.dart';
+import './lib/logic/utility/app_theme/app_theme_bloc.dart';
+import './lib/presentation/screens/core/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
