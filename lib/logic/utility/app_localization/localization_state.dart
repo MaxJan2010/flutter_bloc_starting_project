@@ -20,4 +20,7 @@ class AppLocalizationChangeState extends AppLocalizationState {
   const AppLocalizationChangeState({
     this.languageCode,
   });
+
+    @override
+  List<Object> get props => [languageCode??''];
 }

@@ -13,7 +13,7 @@ import 'presentation/screens/core/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-    Bloc.observer = MyAppBlocObserver();
+  Bloc.observer = MyAppBlocObserver();
   sharedPrefer = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }

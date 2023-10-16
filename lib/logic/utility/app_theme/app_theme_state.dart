@@ -17,4 +17,7 @@ class AppThemeChangeState extends AppThemeState {
   final String? appThemeType;
 
   const AppThemeChangeState({this.appThemeType});
+
+  @override
+  List<Object> get props => [appThemeType??''];
 }
