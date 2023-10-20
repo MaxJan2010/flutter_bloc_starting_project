@@ -1,39 +1,37 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 part of 'post_bloc.dart';
 
 sealed class PostState extends Equatable {
-  final posts;
-  const PostState(this.posts);
-
-  @override
-  List<Object> get props => [posts];
-}
-
-final class PostInitialState extends PostState {
-  const PostInitialState(super.posts);
+  const PostState();
 
   @override
   List<Object> get props => [];
 }
 
-final class PostLoadingState extends PostState {
-  const PostLoadingState(super.posts);
-
+class PostInitialState extends PostState {
   @override
   List<Object> get props => [];
 }
 
-final class PostLoadedState extends PostState {
-  const PostLoadedState({required posts}) : super(posts);
-
+class PostLoadingState extends PostState {
   @override
-  List<Object> get props => [posts];
+  List<Object> get props => [];
 }
 
-final class PostErrorState extends PostState {
-  final String errorMessage;
-
-  const PostErrorState(super.posts, {required this.errorMessage});
-
+class PostSuccessState extends PostState {
+  List<PostModel> postsList;
+  PostSuccessState({
+    required this.postsList,
+  });
   @override
-  List<Object> get props => [errorMessage];
+  List<Object> get props => [postsList];
+}
+
+class PostErrorState extends PostState {
+  String postsListErrorMessage;
+  PostErrorState({
+    required this.postsListErrorMessage,
+  });
+  @override
+  List<Object> get props => [postsListErrorMessage];
 }

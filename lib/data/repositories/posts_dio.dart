@@ -4,11 +4,11 @@ import '../models/post/post.dart';
 
 
 class PostsRepositories{
-  final PostApi postApi;
-  PostsRepositories({required this.postApi});
+   PostApi? postApi;
+  PostsRepositories({ this.postApi});
 
   Future<List<PostModel>> getAllPosts()async{
-    var posts = await postApi.getPostsList();
+    var posts = await postApi!.getPostsList();
     List<Map<String,dynamic>> postsItems = List<Map<String,dynamic>>
     .from(posts);
     List<PostModel> seriesPosts = PostModel.fromData(postsItems);
